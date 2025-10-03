@@ -1,3 +1,4 @@
+---
 openapi: 3.0.3
 info:
   title: Retrieve Journeys using APIs
@@ -8,6 +9,10 @@ info:
     email: support@adobe.com
   license:
     name: Adobe Proprietary
+
+security:
+  - BearerAuth: []
+
 servers:
   - url: https://api.adobe.io/journey
     description: Production server
@@ -279,10 +284,7 @@ components:
     BearerAuth:
       type: http
       scheme: bearer
-      bearerFormat: JWT
-
-security:
-  - BearerAuth: []
+      description: The authentication token to access the service.
 
 tags:
   - name: Journeys
